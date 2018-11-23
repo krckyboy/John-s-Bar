@@ -1,0 +1,119 @@
+.header {
+
+    background: linear-gradient(rgba($colorDark, 0.5) 50%, rgba($colorDark, 0.5) 100%),
+        url("../images/compressed/bar-beverage-cocktail-109275-min.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding: 1.5rem 1.5rem;
+
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    grid-template-areas: 
+        "wt wt wt wt . ."
+        ". . . . . . "
+        ". . . . . . "
+        ". . . . . . "
+        ". h h h h . "
+        ". h h h h . "
+        ". adr adr adr adr . "
+        ". . . . . . "
+        ". btn btn btn btn . "
+        ". sm sm sm sm . ";
+
+
+    &__workTimeTel {
+        grid-area: wt;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        &-wt {
+            // grid-area: tel;
+        }
+
+        &-tel {
+            display: flex;
+            justify-content: center;
+            &-icon {
+                margin-right: 5px;
+                height: 1.5rem;
+            }
+        }
+    }
+
+
+    &__address {
+        grid-area: adr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__h1 {
+        grid-area: h;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &-2 {
+            border-top: 1px solid $colorLight;
+            margin-top: 2rem;
+            padding-top: .5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    &__socialMedia {
+        grid-area: sm;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-icon {
+            width: 2.5rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__btn {
+        align-self: center;
+        grid-area: btn;
+        margin: 0 auto;
+    }
+
+}
+
+.hamburger {
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        @include hamburger_transform_to_cross;
+    }
+
+    &.inactive:hover {
+        &__bar {
+            pointer-events: none; // to avoid event target conflict
+        }
+    }
+
+    &__bar {
+        display: block;
+        width: 2.5rem;
+        height: 1px;
+        background-color: $colorLight;
+        margin: 3px 0;
+        transition: .5s opacity, 1s transform;
+    }
+}

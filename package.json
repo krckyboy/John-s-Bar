@@ -1,0 +1,26 @@
+{
+  "name": "john's_bar",
+  "version": "1.0.0",
+  "description": "A portfolio website for a photographer.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass stylesheets/sass/main.scss stylesheets/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass stylesheets/sass/main.scss stylesheets/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" stylesheets/style.comp.css -o stylesheets/style.prefix.css",
+    "compress:css": "node-sass stylesheets/style.prefix.css stylesheets/style.min.css --output-style compressed",
+    "build": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Dusan Todorovic",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "node-sass": "^4.9.4",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
+  }
+}

@@ -1,0 +1,52 @@
+// ---------------------------------------- 
+// CUSTOM RESET */
+// ---------------------------------------- 
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html { 
+    // This defines what 1rem is 
+    // Also, lower this in media queries for lower paddings, font size and practically everything.  
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+}
+
+// ---------------------------------------- 
+// RESETTINGS SOME STYLES */ 
+// ---------------------------------------- 
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+  

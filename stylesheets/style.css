@@ -1,0 +1,185 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit; }
+
+ul {
+  list-style: none; }
+
+li {
+  display: inline-block; }
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+  color: black; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #fff; }
+
+input,
+textarea {
+  font-family: 'Quicksand', sans-serif; }
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    font-family: 'Quicksand', sans-serif; }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    font-family: 'Quicksand', sans-serif; }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    font-family: 'Quicksand', sans-serif; }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    font-family: 'Quicksand', sans-serif; }
+
+button {
+  font-family: 'Quicksand', sans-serif; }
+
+a {
+  cursor: pointer; }
+
+.sectionHeading {
+  position: relative;
+  font-size: 2.1rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: .1rem; }
+  .sectionHeading::before {
+    content: "";
+    position: absolute;
+    height: .5rem;
+    border-top: 0.5rem solid #FFB547;
+    top: 10%;
+    width: 10rem;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.header {
+  color: #fff; }
+  .header__h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+    text-transform: uppercase; }
+    .header__h1-2 {
+      font-size: 1.7rem;
+      font-weight: 400; }
+  .header__workTimeTel {
+    font-size: 1.2rem;
+    letter-spacing: .2rem; }
+  .header__address {
+    font-size: 1.2rem;
+    letter-spacing: .2rem; }
+
+.btn {
+  color: #fff;
+  background-color: #FFB547;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .btn:hover, .btn:focus {
+    color: #242424; }
+
+.header {
+  background: linear-gradient(rgba(36, 36, 36, 0.5) 50%, rgba(36, 36, 36, 0.5) 100%), url("../images/compressed/bar-beverage-cocktail-109275-min.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding: 1.5rem 1.5rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas: "wt wt wt wt . ." ". . . . . . " ". . . . . . " ". . . . . . " ". h h h h . " ". h h h h . " ". adr adr adr adr . " ". . . . . . " ". btn btn btn btn . " ". sm sm sm sm . "; }
+  .header__workTimeTel {
+    grid-area: wt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start; }
+    .header__workTimeTel-tel {
+      display: flex;
+      justify-content: center; }
+      .header__workTimeTel-tel-icon {
+        margin-right: 5px;
+        height: 1.5rem; }
+  .header__address {
+    grid-area: adr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .header__h1 {
+    grid-area: h;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .header__h1-2 {
+      border-top: 1px solid #fff;
+      margin-top: 2rem;
+      padding-top: .5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; }
+  .header__socialMedia {
+    grid-area: sm;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header__socialMedia-icon {
+      width: 2.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem; }
+  .header__btn {
+    align-self: center;
+    grid-area: btn;
+    margin: 0 auto; }
+
+.hamburger {
+  cursor: pointer;
+  position: fixed;
+  right: 2rem;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column; }
+  .hamburger.active .hamburger__bar:nth-child(1) {
+    opacity: 0;
+    transform: translateY(-2rem); }
+  .hamburger.active .hamburger__bar:nth-child(2) {
+    transform: rotate(45deg); }
+  .hamburger.active .hamburger__bar:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -16px);
+    transform-origin: 100%; }
+  .hamburger.inactive:hover__bar {
+    pointer-events: none; }
+  .hamburger__bar {
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: .5s opacity, 1s transform; }

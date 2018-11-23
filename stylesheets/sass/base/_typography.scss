@@ -1,0 +1,73 @@
+// ---------------------------------------- */
+// TYPOGRAPHY */
+// ---------------------------------------- */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: $colorLight;
+}
+
+input,
+textarea {
+    @include placeholder() {
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    font-family: 'Quicksand',
+    sans-serif;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+.sectionHeading {
+    position: relative;
+    font-size: 2.1rem;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: .1rem;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: .5rem;
+        border-top: .5rem solid $colorAccent;
+        top: 10%;
+        width: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.header {
+    color: $colorLight;
+
+    &__h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+
+        &-2 {
+            font-size: 1.7rem;
+            font-weight: 400;
+        }
+    }
+
+    &__workTimeTel {
+        font-size: 1.2rem;
+        letter-spacing: .2rem;
+    }
+
+    &__address {
+        font-size: 1.2rem;
+        letter-spacing: .2rem;
+    }
+}

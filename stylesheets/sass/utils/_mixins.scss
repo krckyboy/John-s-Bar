@@ -1,0 +1,36 @@
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+
+    &:-moz-placeholder {
+        @content
+    }
+
+    &::-moz-placeholder {
+        @content
+    }
+
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+@mixin hamburger_transform_to_cross {
+    .hamburger {
+        &__bar:nth-child(1) {
+            opacity: 0;
+            transform: translateY(-2rem);
+        }
+
+        &__bar:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        &__bar:nth-child(3) {
+            transform: rotate(-45deg) translate(10px, -16px);
+            transform-origin: 100%;
+        }
+    }
+
+}

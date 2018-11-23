@@ -1,0 +1,14 @@
+.btn {
+    color: $colorLight;
+    background-color: $colorAccent;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        color: $colorDark;
+    }
+}

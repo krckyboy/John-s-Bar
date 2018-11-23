@@ -1,0 +1,16 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+@import "base/reset";  
+@import "base/typography";
+
+@import "components/buttons";
+
+@import "layout/header";      
+@import "layout/footer";     
+
+@import "components/overlayFullscreen";
+ 
+         
+@import "pages/home";
+  
