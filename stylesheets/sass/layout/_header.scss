@@ -91,6 +91,7 @@
 }
 
 .hamburger {
+    z-index: 99;
     cursor: pointer;
     position: fixed;
     right: 2rem;

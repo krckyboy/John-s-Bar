@@ -25,24 +25,22 @@ a {
     cursor: pointer;
 }
 
-.sectionHeading {
-    position: relative;
-    font-size: 2.1rem;
+.headingSecondary {
+    width: 100%;
     text-align: center;
-    text-transform: capitalize;
-    font-weight: 500;
-    letter-spacing: .1rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
 
-
-    &::before {
-        content: "";
-        position: absolute;
-        height: .5rem;
-        border-top: .5rem solid $colorAccent;
-        top: 10%;
-        width: 10rem;
-        left: 50%;
-        transform: translateX(-50%);
+    &__el {
+        font-size: 2rem;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: $colorDark;
+        padding: 1rem 5rem;
+        border: 1px solid $colorDark;
+        display: inline-block;
+        text-align: center;
+        letter-spacing: .35rem;
     }
 }
 
@@ -70,4 +68,20 @@ a {
         font-size: 1.2rem;
         letter-spacing: .2rem;
     }
+}
+
+.headingTertiary {
+    padding-top: 3.1rem;
+    padding-bottom: 2.4rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: $colorDark;
+    letter-spacing: .3rem;
+}
+
+.p {
+    color: $colorDark;
+    font-size: 1.6rem;
+    letter-spacing: .15rem;
+    padding-bottom: 2.5rem;
 }

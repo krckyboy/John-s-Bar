@@ -59,22 +59,21 @@ button {
 a {
   cursor: pointer; }
 
-.sectionHeading {
-  position: relative;
-  font-size: 2.1rem;
+.headingSecondary {
+  width: 100%;
   text-align: center;
-  text-transform: capitalize;
-  font-weight: 500;
-  letter-spacing: .1rem; }
-  .sectionHeading::before {
-    content: "";
-    position: absolute;
-    height: .5rem;
-    border-top: 0.5rem solid #FFB547;
-    top: 10%;
-    width: 10rem;
-    left: 50%;
-    transform: translateX(-50%); }
+  margin-top: 5rem;
+  margin-bottom: 3rem; }
+  .headingSecondary__el {
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #242424;
+    padding: 1rem 5rem;
+    border: 1px solid #242424;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: .35rem; }
 
 .header {
   color: #fff; }
@@ -92,6 +91,25 @@ a {
   .header__address {
     font-size: 1.2rem;
     letter-spacing: .2rem; }
+
+.headingTertiary {
+  padding-top: 3.1rem;
+  padding-bottom: 2.4rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #242424;
+  letter-spacing: .3rem; }
+
+.p {
+  color: #242424;
+  font-size: 1.6rem;
+  letter-spacing: .15rem;
+  padding-bottom: 2.5rem; }
+
+.container {
+  max-width: 1200px;
+  padding-left: 2rem;
+  padding-right: 2rem; }
 
 .btn {
   color: #fff;
@@ -160,6 +178,7 @@ a {
     margin: 0 auto; }
 
 .hamburger {
+  z-index: 99;
   cursor: pointer;
   position: fixed;
   right: 2rem;
@@ -183,3 +202,16 @@ a {
     background-color: #fff;
     margin: 3px 0;
     transition: .5s opacity, 1s transform; }
+
+.about__img {
+  width: 100%;
+  background-size: cover;
+  height: 15rem; }
+  .about__img--1 {
+    background-image: url("/images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%); }
+  .about__img--2 {
+    background-image: url("/images/compressed/alcoholic-beverage-bar-beer-1269025-min.jpg");
+    -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%); }
