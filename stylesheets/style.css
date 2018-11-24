@@ -75,16 +75,31 @@ a {
     text-align: center;
     letter-spacing: .35rem; }
 
-.header {
-  color: #fff; }
-  .header__h1 {
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .h1-1 {
     font-size: 2.5rem;
     font-weight: 300;
     letter-spacing: .2rem;
     text-transform: uppercase; }
-    .header__h1-2 {
-      font-size: 1.7rem;
-      font-weight: 400; }
+  .h1-2 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    border-top: 1px solid #242424;
+    margin-top: 2rem;
+    padding-top: .5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+
+.telCont {
+  font-size: 1.2rem;
+  letter-spacing: .2rem; }
+
+.header {
+  color: #fff; }
   .header__workTimeTel {
     font-size: 1.2rem;
     letter-spacing: .2rem; }
@@ -110,6 +125,22 @@ a {
   max-width: 1200px;
   padding-left: 2rem;
   padding-right: 2rem; }
+
+.telCont {
+  display: flex;
+  justify-content: center; }
+  .telCont_icon {
+    margin-right: 5px;
+    height: 1.5rem; }
+
+.socialMediaCont {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .socialMediaCont-icon {
+    width: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem; }
 
 .btn {
   color: #fff;
@@ -145,12 +176,6 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start; }
-    .header__workTimeTel-tel {
-      display: flex;
-      justify-content: center; }
-      .header__workTimeTel-tel-icon {
-        margin-right: 5px;
-        height: 1.5rem; }
   .header__address {
     grid-area: adr;
     display: flex;
@@ -158,26 +183,11 @@ a {
     justify-content: center;
     flex-direction: column; }
   .header__h1 {
-    grid-area: h;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
+    grid-area: h; }
     .header__h1-2 {
-      border-top: 1px solid #fff;
-      margin-top: 2rem;
-      padding-top: .5rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem; }
+      border-top: 1px solid #fff; }
   .header__socialMedia {
-    grid-area: sm;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .header__socialMedia-icon {
-      width: 2.5rem;
-      margin-left: 1rem;
-      margin-right: 1rem; }
+    grid-area: sm; }
   .header__btn {
     align-self: center;
     grid-area: btn;
@@ -208,6 +218,20 @@ a {
     background-color: #fff;
     margin: 3px 0;
     transition: .5s opacity, 1s transform; }
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  color: #242424; }
+  .footer_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column; }
+    .footer_container > * {
+      margin: 1rem; }
+    .footer_container .h1 {
+      margin-bottom: 2rem; }
 
 .about__img {
   width: 100%;
@@ -275,3 +299,16 @@ a {
       font-weight: 300; }
     .contact__content > * {
       margin: 2rem; }
+
+.gallery__contImg {
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+  display: flex;
+  position: relative; }
+  .gallery__contImg img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    object-fit: cover;
+    height: 100%; }

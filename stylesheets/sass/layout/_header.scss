@@ -33,14 +33,11 @@
         align-items: flex-start;
         &-wt {
             // grid-area: tel;
-        }
+        } 
 
         &-tel {
-            display: flex;
-            justify-content: center;
             &-icon {
-                margin-right: 5px;
-                height: 1.5rem;
+
             }
         }
     }
@@ -56,30 +53,13 @@
 
     &__h1 {
         grid-area: h;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
         &-2 {
             border-top: 1px solid $colorLight;
-            margin-top: 2rem;
-            padding-top: .5rem;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
         }
     }
 
     &__socialMedia {
         grid-area: sm;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &-icon {
-            width: 2.5rem;
-            margin-left: 1rem;
-            margin-right: 1rem;
-        }
     }
 
     &__btn {

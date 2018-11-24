@@ -3,3 +3,24 @@
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+.telCont {
+    display: flex;
+    justify-content: center;
+    &_icon {
+        margin-right: 5px;
+        height: 1.5rem;
+    }
+}
+
+
+.socialMediaCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+        width: 2.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
