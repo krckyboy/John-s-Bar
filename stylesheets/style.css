@@ -208,10 +208,10 @@ a {
   background-size: cover;
   height: 15rem; }
   .about__img--1 {
-    background-image: url("/images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
+    background-image: url("../images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%); }
   .about__img--2 {
-    background-image: url("/images/compressed/alcoholic-beverage-bar-beer-1269025-min.jpg");
+    background-image: url("../images/compressed/alcoholic-beverage-bar-beer-1269025-min.jpg");
     -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%); }
