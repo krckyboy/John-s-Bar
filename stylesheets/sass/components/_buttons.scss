@@ -11,4 +11,15 @@
     &:hover, &:focus {
         color: $colorDark;
     }
+    
+    &-primary {
+        &--noFill {
+            padding: 1rem 4rem;
+            background-color: initial;
+            border: 3px solid $colorAccent;
+                        &:hover, &:focus {
+                            color: $colorAccent;
+                        }
+        }
+    }
 }

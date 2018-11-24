@@ -3,7 +3,7 @@
         width: 100%;
         background-size: cover;
         height: 15rem;
-        
+
         &--1 {
             background-image: url("../images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
@@ -16,5 +16,95 @@
             clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
         }
     }
+}
+
+.menu {
+    color: $colorDark;
+
+    &__menuCont {
+        text-align: center;
+        padding: 2rem 0;
+        &-item {
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            margin: 4rem auto;
+
+
+            &-name {}
+
+            &-icon {
+                width: 8rem;
+                margin: 1.5rem auto;
+
+                &-tequila {
+                    height: 6rem;
+                }
+
+                &-juice {
+                    height: 7rem;
+                }
+
+                &-whiskey {
+                    height: 5rem;
+                }
+
+                &-wine {
+                    height: 6rem;
+                }
+            }
+
+            &-price {}
+        }
+    }
+
+    &__img {
+        width: 100%;
+        background-size: cover;
+        height: 15rem;
+
+        &--1 {
+            background-image: url("../images/compressed/alcohol-bar-beer-1283219-min.jpg");
+        }
+
+        &--2 {
+            height: 25rem;
+            background-image: url("../images/compressed/alcoholic-beverages-bar-beer-63633-min.jpg");
+            -webkit-clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
+            clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
+        }
+    }
+
+    &__discount {
+        padding-bottom: 2rem;
+    }
+
+}
+
+.contact {
+    height: 35rem;
+    background: linear-gradient(rgba($colorDarkest, 0.6) 50%, rgba($colorDarkest, 0.6) 100%),
+        url("../images/compressed/michael-discenza-199756-unsplash-min.jpg");
+        background-size: cover;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            &__text {
+                font-size: 1.8rem;
+                letter-spacing: .2rem;
+                font-weight: 300;
+            }
+
+            & > * {
+                margin: 2rem;
+            }
+        }
 
 }

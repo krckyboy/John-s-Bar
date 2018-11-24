@@ -93,18 +93,18 @@ a {
     letter-spacing: .2rem; }
 
 .headingTertiary {
-  padding-top: 3.1rem;
-  padding-bottom: 2.4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #242424;
-  letter-spacing: .3rem; }
+  letter-spacing: .2rem; }
 
 .p {
   color: #242424;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: .15rem;
-  padding-bottom: 2.5rem; }
+  padding-bottom: 2rem; }
 
 .container {
   max-width: 1200px;
@@ -122,6 +122,12 @@ a {
   cursor: pointer; }
   .btn:hover, .btn:focus {
     color: #242424; }
+  .btn-primary--noFill {
+    padding: 1rem 4rem;
+    background-color: initial;
+    border: 3px solid #FFB547; }
+    .btn-primary--noFill:hover, .btn-primary--noFill:focus {
+      color: #FFB547; }
 
 .header {
   background: linear-gradient(rgba(36, 36, 36, 0.5) 50%, rgba(36, 36, 36, 0.5) 100%), url("../images/compressed/bar-beverage-cocktail-109275-min.jpg");
@@ -215,3 +221,57 @@ a {
     background-image: url("../images/compressed/alcoholic-beverage-bar-beer-1269025-min.jpg");
     -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%); }
+
+.menu {
+  color: #242424; }
+  .menu__menuCont {
+    text-align: center;
+    padding: 2rem 0; }
+    .menu__menuCont-item {
+      font-size: 1.5rem;
+      letter-spacing: .2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin: 4rem auto; }
+      .menu__menuCont-item-icon {
+        width: 8rem;
+        margin: 1.5rem auto; }
+        .menu__menuCont-item-icon-tequila {
+          height: 6rem; }
+        .menu__menuCont-item-icon-juice {
+          height: 7rem; }
+        .menu__menuCont-item-icon-whiskey {
+          height: 5rem; }
+        .menu__menuCont-item-icon-wine {
+          height: 6rem; }
+  .menu__img {
+    width: 100%;
+    background-size: cover;
+    height: 15rem; }
+    .menu__img--1 {
+      background-image: url("../images/compressed/alcohol-bar-beer-1283219-min.jpg"); }
+    .menu__img--2 {
+      height: 25rem;
+      background-image: url("../images/compressed/alcoholic-beverages-bar-beer-63633-min.jpg");
+      -webkit-clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
+      clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%); }
+  .menu__discount {
+    padding-bottom: 2rem; }
+
+.contact {
+  height: 35rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 100%), url("../images/compressed/michael-discenza-199756-unsplash-min.jpg");
+  background-size: cover; }
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+    .contact__content__text {
+      font-size: 1.8rem;
+      letter-spacing: .2rem;
+      font-weight: 300; }
+    .contact__content > * {
+      margin: 2rem; }
