@@ -54,6 +54,12 @@ a {
         font-weight: 300;
         letter-spacing: .2rem;
         text-transform: uppercase;
+        @include mqMin(30em) {
+            font-size: 2.8rem;
+        }
+        @include mqMin(40em) {
+            font-size: 3.6rem;
+        }
     }
 
     &-2 {
@@ -64,6 +70,12 @@ a {
         padding-top: .5rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        @include mqMin(30em) {
+            font-size: 2rem;
+        }
+        @include mqMin(40em) {
+            font-size: 2.8rem;
+        }
     }
 }
 
@@ -76,7 +88,7 @@ a {
     color: $colorLight;
 
 
-    &__workTimeTel {
+    &__workTimeTel, &__workTimeTel-wt {
         font-size: 1.2rem;
         letter-spacing: .2rem;
     }
@@ -84,6 +96,15 @@ a {
     &__address {
         font-size: 1.2rem;
         letter-spacing: .2rem;
+    }
+}
+
+.nav {
+    &_item {
+        font-size: 1.6rem;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        font-weight: 400;
     }
 }
 

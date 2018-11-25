@@ -85,6 +85,12 @@ a {
     font-weight: 300;
     letter-spacing: .2rem;
     text-transform: uppercase; }
+    @media (min-width: 30em) {
+      .h1-1 {
+        font-size: 2.8rem; } }
+    @media (min-width: 40em) {
+      .h1-1 {
+        font-size: 3.6rem; } }
   .h1-2 {
     font-size: 1.7rem;
     font-weight: 400;
@@ -93,6 +99,12 @@ a {
     padding-top: .5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem; }
+    @media (min-width: 30em) {
+      .h1-2 {
+        font-size: 2rem; } }
+    @media (min-width: 40em) {
+      .h1-2 {
+        font-size: 2.8rem; } }
 
 .telCont {
   font-size: 1.2rem;
@@ -100,12 +112,18 @@ a {
 
 .header {
   color: #fff; }
-  .header__workTimeTel {
+  .header__workTimeTel, .header__workTimeTel-wt {
     font-size: 1.2rem;
     letter-spacing: .2rem; }
   .header__address {
     font-size: 1.2rem;
     letter-spacing: .2rem; }
+
+.nav_item {
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  font-weight: 400; }
 
 .headingTertiary {
   padding-top: 2rem;
@@ -161,33 +179,77 @@ a {
       color: #FFB547; }
 
 .header {
-  background: linear-gradient(rgba(36, 36, 36, 0.5) 50%, rgba(36, 36, 36, 0.5) 100%), url("../images/compressed/resized/width 1000/bar-beverage-cocktail-109275-min.jpg");
+  background: linear-gradient(rgba(36, 36, 36, 0.6) 50%, rgba(36, 36, 36, 0.6) 100%), url("../images/compressed/resized/1200height_bar-beverage-cocktail-109275-min.jpg");
   background-size: cover;
   background-position: center center;
-  padding: 1.5rem 1.5rem;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-template-areas: "wt wt wt wt . ." ". . . . . . " ". . . . . . " ". . . . . . " ". h h h h . " ". h h h h . " ". adr adr adr adr . " ". . . . . . " ". btn btn btn btn . " ". sm sm sm sm . "; }
-  @media (min-width: 43.75em) {
-    .header {
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-areas: "wt wt . . . . ." ". . . . . . . " ". . . . . . . " ". . . . . . . " "sm . h h h . . " "sm . h h h . . " ". . adr adr adr . . " ". . . . . . . " ". . btn btn btn . . " ". . . . . . . "; } }
-  .header__workTimeTel {
+  padding: .5rem 1.5rem 1rem 1.5rem;
+  height: 100vh; }
+  .header_container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(17, 1fr);
+    grid-template-areas: "wt wt wt wt . ." "tel tel tel tel . . " ". . . . . . " ". . . . . . " ". . . . . . " ". . . . . . " ". . . . . . " ". . . . . . " ". . . . . . " ". h h h h . " ". h h h h . " ". . . . . . " ". . . . . . " ". adr adr adr adr . " ". . . . . . " ". btn btn btn btn . " ". . . . . . " ". sm sm sm sm . ";
+    padding: 1rem;
+    padding-bottom: 0; }
+    @media (min-width: 43.75em) {
+      .header_container {
+        padding: 2rem;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: "adr adr btn btn btn wt wt  " "tel tel . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " "sm . . . . . . " "sm . h h h . . " "sm . h h h . . " "sm . . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " ". . . . . . . " ". nav  nav nav nav nav ."; } }
+  .header_nav {
+    display: none;
+    grid-area: nav;
+    align-content: center;
+    justify-items: center;
+    justify-self: center;
+    max-width: 70rem;
+    justify-content: space-around;
+    align-items: flex-end; }
+    @media (min-width: 43.75em) {
+      .header_nav {
+        display: flex; } }
+    .header_nav_item {
+      margin-left: 3rem;
+      margin-right: 3rem; }
+      @media (min-width: 60em) {
+        .header_nav_item {
+          margin-left: 8rem;
+          margin-right: 8rem; } }
+  .header__workTimeTel-wt {
     grid-area: wt;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start; }
-    .header__workTimeTel > * {
-      margin: .5rem; }
+    @media (min-width: 43.75em) {
+      .header__workTimeTel-wt {
+        align-items: flex-end; } }
+    .header__workTimeTel-wt > * {
+      margin-top: .5rem;
+      margin-bottom: .5rem; }
+  .header__workTimeTel-tel {
+    grid-area: tel;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    @media (min-width: 20.5em) {
+      .header__workTimeTel-tel {
+        margin-top: -2rem; } }
+    @media (min-width: 43.75em) {
+      .header__workTimeTel-tel {
+        margin-top: initial; } }
   .header__address {
     grid-area: adr;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; }
+    @media (min-width: 43.75em) {
+      .header__address {
+        justify-content: flex-start;
+        align-items: flex-start;
+        grid-area: adr; } }
   .header__h1 {
     grid-area: h; }
     .header__h1-2 {
@@ -212,6 +274,9 @@ a {
   top: 1.5rem;
   display: flex;
   flex-direction: column; }
+  @media (min-width: 43.75em) {
+    .hamburger {
+      display: none; } }
   .hamburger.active .hamburger__bar:nth-child(1) {
     opacity: 0;
     transform: translateY(-2rem); }
@@ -231,7 +296,7 @@ a {
     transition: .5s opacity, 1s transform; }
 
 .footer {
-  padding-top: 4rem;
+  padding-top: 10rem;
   padding-bottom: 3rem;
   color: #242424; }
   .footer_container {
@@ -353,7 +418,7 @@ a {
       height: initial;
       display: grid;
       grid-gap: 5px;
-      grid-template-columns: repeat(6, minmax(10rem, 1fr));
+      grid-template-columns: repeat(6, minmax(7rem, 1fr));
       grid-auto-rows: 10rem;
       grid-auto-flow: dense;
       padding: 0 10rem; } }

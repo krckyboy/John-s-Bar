@@ -163,7 +163,7 @@
             height: initial;
             display: grid;
             grid-gap: 5px;
-            grid-template-columns: repeat(6, minmax(10rem, 1fr));
+            grid-template-columns: repeat(6, minmax(7rem, 1fr));
             grid-auto-rows: 10rem;
             grid-auto-flow: dense;
             padding: 0 10rem;
