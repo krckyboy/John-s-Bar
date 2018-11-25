@@ -170,12 +170,18 @@ a {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-template-areas: "wt wt wt wt . ." ". . . . . . " ". . . . . . " ". . . . . . " ". h h h h . " ". h h h h . " ". adr adr adr adr . " ". . . . . . " ". btn btn btn btn . " ". sm sm sm sm . "; }
+  @media (min-width: 43.75em) {
+    .header {
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-areas: "wt wt . . . . ." ". . . . . . . " ". . . . . . . " ". . . . . . . " "sm . h h h . . " "sm . h h h . . " ". . adr adr adr . . " ". . . . . . . " ". . btn btn btn . . " ". . . . . . . "; } }
   .header__workTimeTel {
     grid-area: wt;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start; }
+    .header__workTimeTel > * {
+      margin: .5rem; }
   .header__address {
     grid-area: adr;
     display: flex;
@@ -188,6 +194,11 @@ a {
       border-top: 1px solid #fff; }
   .header__socialMedia {
     grid-area: sm; }
+    @media (min-width: 43.75em) {
+      .header__socialMedia {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start; } }
   .header__btn {
     align-self: center;
     grid-area: btn;
@@ -227,16 +238,25 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column; }
+    flex-direction: column;
+    margin: 0 auto; }
     .footer_container > * {
       margin: 1rem; }
     .footer_container .h1 {
       margin-bottom: 2rem; }
 
+.about .container {
+  max-width: 70rem;
+  margin: 0 auto; }
+
 .about__img {
   width: 100%;
   background-size: cover;
-  height: 15rem; }
+  height: 20rem; }
+  @media (min-width: 43.75em) {
+    .about__img {
+      max-width: 66rem;
+      margin: 0 auto; } }
   .about__img--1 {
     background-image: url("../images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
@@ -247,17 +267,24 @@ a {
     clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%); }
 
 .menu {
-  color: #242424; }
+  color: #242424;
+  text-align: center; }
+  .menu_container {
+    max-width: 70rem;
+    margin: 0 auto; }
   .menu__menuCont {
-    text-align: center;
     padding: 2rem 0; }
+    @media (min-width: 43.75em) {
+      .menu__menuCont {
+        display: flex; } }
     .menu__menuCont-item {
       font-size: 1.5rem;
       letter-spacing: .2rem;
       text-align: center;
       display: flex;
       flex-direction: column;
-      margin: 4rem auto; }
+      margin: 4rem auto;
+      justify-content: space-between; }
       .menu__menuCont-item-icon {
         width: 8rem;
         margin: 1.5rem auto; }
@@ -272,16 +299,31 @@ a {
   .menu__img {
     width: 100%;
     background-size: cover;
-    height: 15rem; }
+    height: 22rem;
+    margin: 0 auto;
+    max-width: 66rem; }
+    @media (min-width: 20em) {
+      .menu__img {
+        height: 25rem; } }
+    @media (min-width: 25em) {
+      .menu__img {
+        height: 30rem; } }
+    @media (min-width: 30em) {
+      .menu__img {
+        height: 35rem; } }
+    @media (min-width: 35em) {
+      .menu__img {
+        height: 40rem; } }
     .menu__img--1 {
       background-image: url("../images/compressed/alcohol-bar-beer-1283219-min.jpg"); }
     .menu__img--2 {
-      height: 25rem;
       background-image: url("../images/compressed/alcoholic-beverages-bar-beer-63633-min.jpg");
       -webkit-clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
       clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%); }
   .menu__discount {
-    padding-bottom: 2rem; }
+    padding-bottom: 2rem;
+    text-align: center;
+    max-width: 50rem; }
 
 .contact {
   height: 35rem;
@@ -306,9 +348,38 @@ a {
   overflow: hidden;
   display: flex;
   position: relative; }
+  @media (min-width: 43.75em) {
+    .gallery__contImg {
+      height: initial;
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: repeat(6, minmax(10rem, 1fr));
+      grid-auto-rows: 10rem;
+      grid-auto-flow: dense;
+      padding: 0 10rem; } }
+  @media (min-width: 60em) {
+    .gallery__contImg {
+      grid-auto-rows: 15rem; } }
+  @media (min-width: 70em) {
+    .gallery__contImg {
+      grid-auto-rows: 20rem; } }
   .gallery__contImg img {
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 100%;
     object-fit: cover;
     height: 100%; }
+    @media (min-width: 43.75em) {
+      .gallery__contImg img {
+        padding: 0;
+        width: 100%; }
+        .gallery__contImg img:nth-child(-n + 3), .gallery__contImg img:nth-child(6), .gallery__contImg img:nth-child(7), .gallery__contImg img:nth-child(10), .gallery__contImg img:nth-child(11), .gallery__contImg img:nth-child(12), .gallery__contImg img:nth-child(15), .gallery__contImg img:nth-child(16) {
+          grid-row: span 2; }
+        .gallery__contImg img:nth-child(10) {
+          grid-column: span 1; }
+        .gallery__contImg img:nth-child(3), .gallery__contImg img:nth-child(4), .gallery__contImg img:nth-child(7), .gallery__contImg img:nth-child(9), .gallery__contImg img:nth-child(11), .gallery__contImg img:nth-child(14), .gallery__contImg img:nth-child(15), .gallery__contImg img:nth-child(17) {
+          grid-column: span 2; }
+        .gallery__contImg img:nth-child(2), .gallery__contImg img:nth-child(12) {
+          grid-column: span 3; }
+        .gallery__contImg img:nth-child(5), .gallery__contImg img:nth-child(6), .gallery__contImg img:nth-child(8), .gallery__contImg img:nth-child(13), .gallery__contImg img:nth-child(16), .gallery__contImg img:nth-child(18) {
+          grid-column: span 4; } }

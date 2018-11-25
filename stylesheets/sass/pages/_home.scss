@@ -1,8 +1,20 @@
 .about {
+
+    .container {
+        max-width: 70rem;
+        margin: 0 auto;
+    }
+
     &__img {
+
         width: 100%;
         background-size: cover;
-        height: 15rem;
+        height: 20rem;
+
+        @include mqMin(43.75em) {
+            max-width: 66rem;
+            margin: 0 auto;
+        }
 
         &--1 {
             background-image: url("../images/compressed/alcohol-alcoholic-bar-545058-min.jpg");
@@ -20,10 +32,20 @@
 
 .menu {
     color: $colorDark;
+    text-align: center;
+
+    &_container {
+        max-width: 70rem;
+        margin: 0 auto;
+    }
 
     &__menuCont {
-        text-align: center;
         padding: 2rem 0;
+
+        @include mqMin(43.75em) {
+            display: flex;
+        }
+
         &-item {
             font-size: 1.5rem;
             letter-spacing: .2rem;
@@ -31,6 +53,7 @@
             display: flex;
             flex-direction: column;
             margin: 4rem auto;
+            justify-content: space-between;
 
 
             &-name {}
@@ -63,14 +86,31 @@
     &__img {
         width: 100%;
         background-size: cover;
-        height: 15rem;
+        height: 22rem;
+        margin: 0 auto;
+        max-width: 66rem;
+
+        @include mqMin(20em) {
+            height: 25rem;
+        }
+
+        @include mqMin(25em) {
+            height: 30rem;
+        }
+
+        @include mqMin(30em) {
+            height: 35rem;
+        }
+
+        @include mqMin(35em) {
+            height: 40rem;
+        }
 
         &--1 {
             background-image: url("../images/compressed/alcohol-bar-beer-1283219-min.jpg");
         }
 
         &--2 {
-            height: 25rem;
             background-image: url("../images/compressed/alcoholic-beverages-bar-beer-63633-min.jpg");
             -webkit-clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
             clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
@@ -79,6 +119,8 @@
 
     &__discount {
         padding-bottom: 2rem;
+        text-align: center;
+        max-width: 50rem;
     }
 
 }
@@ -87,25 +129,25 @@
     height: 35rem;
     background: linear-gradient(rgba($colorDarkest, 0.6) 50%, rgba($colorDarkest, 0.6) 100%),
         url("../images/compressed/michael-discenza-199756-unsplash-min.jpg");
-        background-size: cover;
+    background-size: cover;
 
-        &__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
 
-            &__text {
-                font-size: 1.8rem;
-                letter-spacing: .2rem;
-                font-weight: 300;
-            }
-
-            & > * {
-                margin: 2rem;
-            }
+        &__text {
+            font-size: 1.8rem;
+            letter-spacing: .2rem;
+            font-weight: 300;
         }
+
+        &>* {
+            margin: 2rem;
+        }
+    }
 
 }
 
@@ -116,13 +158,78 @@
         overflow: hidden;
         display: flex;
         position: relative;
-        
+
+        @include mqMin(43.75em) {
+            height: initial;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(6, minmax(10rem, 1fr));
+            grid-auto-rows: 10rem;
+            grid-auto-flow: dense;
+            padding: 0 10rem;
+        }
+
+        @include mqMin(60em) {
+            grid-auto-rows: 15rem;
+        }
+
+        @include mqMin(70em) {
+            grid-auto-rows: 20rem;
+        }
+
         img {
             padding-left: 1rem;
             padding-right: 1rem;
             max-width: 100%;
             object-fit: cover;
             height: 100%;
+
+            @include mqMin(43.75em) {
+                padding: 0;
+                width: 100%;
+
+                &:nth-child(-n + 3),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12),
+                &:nth-child(15),
+                &:nth-child(16) {
+                    grid-row: span 2;
+                }
+
+                &:nth-child(10) {
+                    grid-column: span 1;
+                }
+
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(7),
+                &:nth-child(9),
+                &:nth-child(11),
+                &:nth-child(14),
+                &:nth-child(15),
+                &:nth-child(17) {
+                    grid-column: span 2;
+                }
+
+                &:nth-child(2),
+                &:nth-child(12) {
+                    grid-column: span 3;
+                }
+
+
+
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(8),
+                &:nth-child(13),
+                &:nth-child(16),
+                &:nth-child(18) {
+                    grid-column: span 4;
+                }
+            }
         }
     }
 }

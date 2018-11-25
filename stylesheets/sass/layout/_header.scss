@@ -5,14 +5,12 @@
     background-size: cover;
     background-position: center center;
     padding: 1.5rem 1.5rem;
-
     height: 100vh;
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(10, 1fr);
-
-    grid-template-areas: 
+    grid-template-areas:
         "wt wt wt wt . ."
         ". . . . . . "
         ". . . . . . "
@@ -24,22 +22,32 @@
         ". btn btn btn btn . "
         ". sm sm sm sm . ";
 
+    @include mqMin(43.75em) {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas:
+            "wt wt . . . . ."
+            ". . . . . . . "
+            ". . . . . . . "
+            ". . . . . . . "
+            "sm . h h h . . "
+            "sm . h h h . . "
+            ". . adr adr adr . . "
+            ". . . . . . . "
+            ". . btn btn btn . . "
+            ". . . . . . . ";
+    }
 
     &__workTimeTel {
         grid-area: wt;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: flex-start;
-        &-wt {
-            // grid-area: tel;
-        } 
 
-        &-tel {
-            &-icon {
-
-            }
+        &>* {
+            margin: .5rem;
         }
+
     }
 
 
@@ -53,6 +61,7 @@
 
     &__h1 {
         grid-area: h;
+
         &-2 {
             border-top: 1px solid $colorLight;
         }
@@ -60,6 +69,11 @@
 
     &__socialMedia {
         grid-area: sm;
+        @include mqMin(43.75em) { 
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
     }
 
     &__btn {
