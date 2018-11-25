@@ -3,13 +3,55 @@
     .container {
         max-width: 70rem;
         margin: 0 auto;
+
+        @include mqMin(60em) {
+            width: 50%;
+        }
     }
+
+    // @include mqMin(60em) {
+    //     display: grid;
+    //     grid-template-columns: repeat(6, 1fr);
+    //     grid-auto-rows: 30rem;
+    // }
+
+    // grid-template-areas: 
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . ."
+    // ". . . . . .";
+
+    @include mqMin(60em) {
+        .aboutCont {
+
+            display: flex;
+            max-width: 96rem;
+            margin: 10rem auto;
+
+            &--1 {
+                .about__img {}
+            }
+
+            &--2 {
+                .about__img {}
+
+            }
+        }
+    }
+
 
     &__img {
 
         width: 100%;
         background-size: cover;
         height: 20rem;
+        background-position: center;
 
         @include mqMin(43.75em) {
             max-width: 66rem;
@@ -18,14 +60,27 @@
 
         &--1 {
             background-image: url("../images/compressed/resized/width 1000/alcohol-alcoholic-bar-545058-min.jpg");
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
+
+            @include mqMin(60em) {
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
+                order: 2;
+                height: initial;
+                max-width: 45%;
+                transform: rotate(5deg);
+            }
         }
 
         &--2 {
             background-image: url("../images/compressed/resized/width 1000/alcoholic-beverage-bar-beer-1269025-min.jpg");
-            -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+
+            @include mqMin(60em) {
+                -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+                max-width: 45%;
+                height: initial;
+                transform: rotate(-5deg);
+            }
         }
     }
 }
@@ -35,16 +90,26 @@
     text-align: center;
 
     &_container {
-        max-width: 70rem;
+        max-width: 96rem;
         margin: 0 auto;
+
+        @include mqMin(60em) {
+            &:nth-child(2) {
+                margin: 0;
+            }
+        }
     }
 
     &__menuCont {
         padding: 2rem 0;
 
+
         @include mqMin(43.75em) {
             display: flex;
+            padding: 8rem 0;
         }
+
+
 
         &-item {
             font-size: 1.5rem;
@@ -86,6 +151,7 @@
     &__img {
         width: 100%;
         background-size: cover;
+        background-position: center;
         height: 22rem;
         margin: 0 auto;
         max-width: 66rem;
@@ -102,18 +168,38 @@
             height: 35rem;
         }
 
-        @include mqMin(35em) {
-            height: 40rem;
-        }
 
         &--1 {
+            max-width: 120rem;
             background-image: url("../images/compressed/resized/width 1000/alcohol-bar-beer-1283219-min.jpg");
         }
 
         &--2 {
             background-image: url("../images/compressed/resized/width 1000/alcoholic-beverages-bar-beer-63633-min.jpg");
-            -webkit-clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
-            clip-path: polygon(8% 9%, 100% 0, 93% 89%, 0% 100%);
+
+            @include mqMin(60em) {
+                height: 30rem;
+                // width: 45%;
+                max-width: 45%;
+                margin: 0;
+                -webkit-clip-path: polygon(0 20%, 100% 0, 91% 90%, 0% 100%);
+                clip-path: polygon(0 20%, 100% 0, 91% 90%, 0% 100%);
+            }
+        }
+    }
+
+    .menuDiscCont {
+        @include mqMin(60em) {
+            max-width: 96rem;
+            margin: 0 auto;
+            margin-bottom: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > * {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
         }
     }
 
@@ -121,6 +207,11 @@
         padding-bottom: 2rem;
         text-align: center;
         max-width: 50rem;
+
+        @include mqMin(60em) {
+            text-align: initial;
+            width: 50%;
+        }
     }
 
 }
@@ -158,23 +249,25 @@
         overflow: hidden;
         display: flex;
         position: relative;
+        max-width: 120rem;
+        margin: 0 auto;
 
         @include mqMin(43.75em) {
             height: initial;
             display: grid;
             grid-gap: 5px;
-            grid-template-columns: repeat(6, minmax(7rem, 1fr));
+            grid-template-columns: repeat(6, minmax(5rem, 1fr));
             grid-auto-rows: 10rem;
             grid-auto-flow: dense;
             padding: 0 10rem;
         }
 
         @include mqMin(60em) {
-            grid-auto-rows: 15rem;
+            // grid-auto-rows: 15rem;
         }
 
         @include mqMin(70em) {
-            grid-auto-rows: 20rem;
+            grid-auto-rows: 15rem;
         }
 
         img {
