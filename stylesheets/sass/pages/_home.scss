@@ -165,11 +165,21 @@
         &--1 {
             max-width: 120rem;
             background-image: url("../images/compressed/resized/width 1000/alcohol-bar-beer-1283219-min.jpg");
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: auto;
+            // backface-visibility: hidden;
+            // -webkit-backface-visibility: hidden;
+            // -webkit-transform: translateZ(0) scale(1.0, 1.0);
+            // -webkit-transform: translate3d(0,0,0);
+            // position: static;
+            // will-change:top;
+
         }
-        
+
         &--2 {
             background-image: url("../images/compressed/resized/width 1000/alcoholic-beverages-bar-beer-63633-min.jpg");
-            
+
             @include mqMin(60em) {
                 height: 50rem;
                 // width: 45%;
@@ -271,6 +281,8 @@
             max-width: 100%;
             object-fit: cover;
             height: 100%;
+            width: 100%;
+            object-position: center center;
 
             @include mqMin(43.75em) {
                 padding: 0;
