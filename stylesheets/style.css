@@ -321,7 +321,11 @@ a {
   .about .aboutCont {
     display: flex;
     max-width: 96rem;
-    margin: 10rem auto; } }
+    margin: 15rem auto; }
+    .about .aboutCont--1 .container {
+      padding-right: 10rem; }
+    .about .aboutCont--2 .container {
+      padding-left: 10rem; } }
 
 .about__img {
   width: 100%;
@@ -332,6 +336,10 @@ a {
     .about__img {
       max-width: 66rem;
       margin: 0 auto; } }
+  @media (min-width: 60em) {
+    .about__img {
+      max-width: 55%;
+      height: 30rem; } }
   .about__img--1 {
     background-image: url("../images/compressed/resized/width 1000/alcohol-alcoholic-bar-545058-min.jpg"); }
     @media (min-width: 60em) {
@@ -339,8 +347,6 @@ a {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 9% 99%);
         order: 2;
-        height: initial;
-        max-width: 45%;
         transform: rotate(5deg); } }
   .about__img--2 {
     background-image: url("../images/compressed/resized/width 1000/alcoholic-beverage-bar-beer-1269025-min.jpg"); }
@@ -348,8 +354,6 @@ a {
       .about__img--2 {
         -webkit-clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
-        max-width: 45%;
-        height: initial;
         transform: rotate(-5deg); } }
 
 .menu {
@@ -409,8 +413,8 @@ a {
       background-image: url("../images/compressed/resized/width 1000/alcoholic-beverages-bar-beer-63633-min.jpg"); }
       @media (min-width: 60em) {
         .menu__img--2 {
-          height: 30rem;
-          max-width: 45%;
+          height: 50rem;
+          max-width: 50%;
           margin: 0;
           -webkit-clip-path: polygon(0 20%, 100% 0, 91% 90%, 0% 100%);
           clip-path: polygon(0 20%, 100% 0, 91% 90%, 0% 100%); } }
@@ -420,19 +424,20 @@ a {
       margin: 0 auto;
       margin-bottom: 10rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center; }
       .menu .menuDiscCont > * {
         padding-left: 4rem;
         padding-right: 4rem; } }
   .menu__discount {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     text-align: center;
-    max-width: 50rem; }
+    max-width: 50rem;
+    padding-left: 6rem; }
     @media (min-width: 60em) {
       .menu__discount {
         text-align: initial;
-        width: 50%; } }
+        width: 40%; } }
 
 .contact {
   height: 35rem;
