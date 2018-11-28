@@ -39,6 +39,7 @@
 
         @include mqMin(43.75em) {
             padding: 2rem;
+            padding-bottom: 0;
             grid-template-columns: repeat(7, 1fr);
             grid-template-areas:
                 "adr adr btn btn btn wt wt  "
@@ -68,8 +69,11 @@
         align-content: center;
         justify-items: center;
         justify-self: center;
+        &.stickyHeader {
+            transition: background-color 1s;
+        }
 
-        max-width: 70rem;
+        // max-width: 82rem;
 
         justify-content: space-around;
         align-items: flex-end;
@@ -79,12 +83,13 @@
         }
 
         &_item {
-            margin-left: 3rem;
-            margin-right: 3rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            transition: color .2s;
 
             @include mqMin(60em) {
-                margin-left: 8rem;
-                margin-right: 8rem;
+                margin-left: 4.5rem;
+                margin-right: 4.5rem;
             }
         }
 
@@ -174,6 +179,7 @@
     top: 1.5rem;
     display: flex;
     flex-direction: column;
+    transition: all .5s;
 
     @include mqMin(43.75em) {
         display: none;
@@ -196,5 +202,37 @@
         background-color: $colorLight;
         margin: 3px 0;
         transition: .5s opacity, 1s transform;
+    }
+}
+
+.overlayNav {
+    background-color: rgba($colorAccent, .95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all .5s;
+    z-index: 98;
+
+    @include mqMin(43.75em) {
+        display: none;
+    }
+
+    &__cont {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__item {
+
     }
 }

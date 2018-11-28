@@ -55,6 +55,25 @@ const ut = {
                 }
             }
         }
+    },
+    onClick: (navEl, sectEl) => {
+        navEl.addEventListener("click", e => {
+            e.preventDefault();
+            sectEl.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        })
+    },
+    onClickMobileNav: (navEl, sectEl, callback) => {
+        navEl.addEventListener("click", e => {
+            e.preventDefault();
+            callback();
+            sectEl.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        })
     }
 }
 

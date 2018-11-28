@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
-<body>
+<body id="home">
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="header_container">
             <div class="hamburger inactive" id="hamburger">
                 <span class="hamburger__bar"></span>
@@ -43,28 +43,40 @@
             </a>
             <div class="header__socialMedia socialMediaCont">
 
-                 <a href="#">
-                     <img src="./images/icons/social media/twitter.png" alt="" class="header__socialMedia-icon socialMedia-Twitter socialMediaCont-icon">
+                <a href="#">
+                    <img src="./images/icons/social media/twitter.png" alt="" class="header__socialMedia-icon socialMedia-Twitter socialMediaCont-icon">
                 </a>
-                 <a href="#">
-                     <img src="./images/icons/social media/facebook.png" alt="" class="header__socialMedia-icon socialMedia-Facebook socialMediaCont-icon">
+                <a href="#">
+                    <img src="./images/icons/social media/facebook.png" alt="" class="header__socialMedia-icon socialMedia-Facebook socialMediaCont-icon">
                 </a>
-                 <a href="#">
-                     <img src="./images/icons/social media/instagram.png" alt="" class="header__socialMedia-icon socialMedia-Instagram socialMediaCont-icon">
+                <a href="#">
+                    <img src="./images/icons/social media/instagram.png" alt="" class="header__socialMedia-icon socialMedia-Instagram socialMediaCont-icon">
                 </a>
             </div>
 
-            <nav class="header_nav nav">
-                <a href="#" class="header_nav_item nav_item">Home</a>
-                <a href="#" class="header_nav_item nav_item">About</a>
-                <a href="#" class="header_nav_item nav_item">Menu</a>
-                <a href="#" class="header_nav_item nav_item">Gallery</a>
+            <nav class="header_nav nav" id="nav">
+                <div>
+                    <a href="#" id="nav_home" class="header_nav_item nav_item">Home</a>
+                    <a href="#" id="nav_about" class="header_nav_item nav_item">About</a>
+                    <a href="#" id="nav_menu" class="header_nav_item nav_item">Menu</a>
+                    <a href="#" id="nav_gallery" class="header_nav_item nav_item">Gallery</a>
+                </div>
             </nav>
         </div>
+
+        <div class="overlayNav translateToRight" id="overlayNav">
+            <div class="overlayNav__cont">
+                <a href="#home" class="overlayNav__item" id="overlayNav__item--home">Home</a>
+                <a href="#about" class="overlayNav__item" id="overlayNav__item--about">About</a>
+                <a href="#menu" class="overlayNav__item" id="overlayNav__item--menu">Menu</a>
+                <a href="#gallery" class="overlayNav__item" id="overlayNav__item--gallery">Gallery</a>
+            </div>
+        </div>
+
     </header>
 
     <main class="main">
-        <section class="about">
+        <section class="about" id="about">
             <div class="headingSecondary">
                 <h2 class="headingSecondary__el">About</h2>
             </div>
@@ -104,7 +116,7 @@
 
         </section>
 
-        <section class="menu">
+        <section class="menu" id="menu">
             <div class="headingSecondary">
                 <h2 class="headingSecondary__el">Menu</h2>
             </div>
@@ -148,7 +160,7 @@
             </div>
 
             <div class="menuDiscCont">
-                <div class="menu__img menu__img--2" >
+                <div class="menu__img menu__img--2">
                 </div>
 
                 <div class="container menu__discount menu_container">
@@ -169,33 +181,28 @@
             </div>
         </section>
 
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="headingSecondary">
                 <h2 class="headingSecondary__el">Gallery</h2>
             </div>
             <div class="gallery__contImg">
-                <img src="./images/compressed/resized/width 1000/michael-discenza-199756-unsplash-min.jpg"
-                    alt="">
+                <img src="./images/compressed/resized/width 1000/michael-discenza-199756-unsplash-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/bar-billiards-gambling-261043-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/patrick-tomasso-499112-unsplash-min.jpg" alt="">
-                <img src="./images/compressed/resized/width 1000/adult-alcohol-bar-274192-min.jpg"
-                    alt="">
+                <img src="./images/compressed/resized/width 1000/adult-alcohol-bar-274192-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/adult-alcohol-alcoholic-beverage-1267360-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/benjamin-ashton-483069-unsplash-min.jpg" alt="">
-                <img src="./images/compressed/resized/width 1000/alcohol-ale-bar-159291-min.jpg"
-                    alt="">
+                <img src="./images/compressed/resized/width 1000/alcohol-ale-bar-159291-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/crew-89808-unsplash-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/alcoholic-beverage-bar-beer-1269025-min.jpg" alt="">
-                <img src="./images/compressed/resized/width 1000/marc-olivier-jodoin-277945-unsplash-min.jpg"
-                    alt="">
+                <img src="./images/compressed/resized/width 1000/marc-olivier-jodoin-277945-unsplash-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/bar-beverage-cocktail-109275-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/adam-jaime-119565-unsplash-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/alcohol-alcoholic-alcoholic-beverage-162480-min.jpg"
                     alt="">
                 <img src="./images/compressed/resized/width 1000/alcoholic-beverages-bar-beer-63633-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/alcohol-bar-beer-1283219-min.jpg" alt="">
-                <img src="./images/compressed/resized/width 1000/helena-yankovska-434536-unsplash-min.jpg"
-                    alt="">
+                <img src="./images/compressed/resized/width 1000/helena-yankovska-434536-unsplash-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/alcohol-alcoholic-bar-545058-min.jpg" alt="">
                 <img src="./images/compressed/resized/width 1000/alcohol-bar-beer-1005642-min.jpg" alt="">
             </div>

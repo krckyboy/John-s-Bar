@@ -118,6 +118,15 @@ a {
         text-transform: uppercase;
         font-weight: 500;
         color: $colorLight;
+
+        &:hover, &:active {
+            color: $colorAccent;
+        }
+
+        &:focus {
+            color: $colorLight;
+            font-weight: 600;
+        }
     }
 }
 
@@ -135,4 +144,18 @@ a {
     font-size: 1.4rem;
     letter-spacing: .15rem;
     padding-bottom: 2rem;
+}
+
+.overlayNav {
+    &__cont {
+    }
+
+    &__item {
+        margin: 2rem;
+        color: $colorLight;
+        font-size: 3rem;        
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: .3s all;
+    }
 }
