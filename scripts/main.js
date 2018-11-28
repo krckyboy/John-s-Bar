@@ -96,12 +96,12 @@ ut.ready(() => {
 
         const showOverlayMenu = () => {
             overlayNav.classList.remove("translateToRight");
-            document.body.classList.toggle("overflowHidden");
+            ut.bodyOverflowHiddenToggle();
         }
 
         const hideOverlayMenu = () => {
             overlayNav.classList.add("translateToRight");
-            document.body.classList.toggle("overflowHidden");
+            ut.bodyOverflowHiddenToggle();
         }
 
         const hamToggleStates = () => {
@@ -127,18 +127,22 @@ ut.ready(() => {
             ut.onClickMobileNav(navItems.home, sections.home, () => {
                 hideOverlayMenu();
                 hamToggleStates();
+                ut.bodyOverflowHiddenToggle();
             });
             ut.onClickMobileNav(navItems.about, sections.about, () => {
                 hideOverlayMenu();
                 hamToggleStates();
+                ut.bodyOverflowHiddenToggle();
             });
             ut.onClickMobileNav(navItems.menu, sections.menu, () => {
                 hideOverlayMenu();
                 hamToggleStates();
+                ut.bodyOverflowHiddenToggle();
             });
             ut.onClickMobileNav(navItems.gallery, sections.gallery, () => {
                 hideOverlayMenu();
                 hamToggleStates();
+                ut.bodyOverflowHiddenToggle();
             });
         })();
 
@@ -153,6 +157,26 @@ ut.ready(() => {
 
         return fnc;
     })();
+
+    const discountDay = (() => {
+        const d = new Date;
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const drinks = ["Beers", "Cocktails", "Juices", "Tequilas", "Whiskeys", "Wine"];
+        const dayAndDrinkPosition = d.getDay();
+        const day = days[dayAndDrinkPosition];
+        const drink = drinks[dayAndDrinkPosition];
+        document.getElementById("day").textContent = day;
+        document.getElementById("drinkDay").textContent = drink;
+    })();
+
+    const galleryMobile = (() => {
+        window.addEventListener("resize", e => {
+            let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
+            if (viewport < 43.75) {
+                console.log("it's mobile");
+            }
+        })
+    })()
 
     window.addEventListener("scroll", e => {
         e.preventDefault();

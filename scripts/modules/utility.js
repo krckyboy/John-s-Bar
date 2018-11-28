@@ -74,6 +74,15 @@ const ut = {
                 block: "start"
             });
         })
+    },
+    bodyOverflowHiddenOn: () => {
+        document.body.classList.add("overflowHidden");
+    },
+    bodyOverflowHiddenOff: () => {
+        document.body.classList.remove("overflowHidden");
+    },
+    bodyOverflowHiddenToggle: () => {
+        document.body.classList.toggle("overflowHidden");
     }
 }
 
