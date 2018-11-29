@@ -1,0 +1,70 @@
+.overlayContact {
+    background-color: rgba($colorDark, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all .5s;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    color: $colorDark;
+    
+    // display: none;
+    // opacity: 0;
+    display: flex;
+    transition: .2s opacity ease-out; 
+
+    &.d-none {
+        transform: translate(-100%, -100%);
+    }
+
+    &__cont {
+        background-color: rgba($colorAccent, .95);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding: 3rem 5rem;
+        max-width: 50rem;
+        max-height: 30rem;
+
+        @include mqMin(43.75em) {
+            width: 50rem;
+            max-height: 40rem;
+        }
+    }
+
+    &__headlineTelephoneCont {
+        align-self: center;
+        justify-self: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__headline, &__telephone {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__headline {
+        font-size: 2rem;
+        
+        @include mqMin(43.75em) {
+            font-size: 3rem;
+        }
+    }
+
+    &__telephone {
+        font-size: 1.5rem;
+        display: flex;
+    }
+    
+}

@@ -177,6 +177,9 @@ a {
 .d-none {
   display: none; }
 
+.opacity-none {
+  opacity: 0; }
+
 .stickyHeader {
   position: fixed;
   top: 0;
@@ -200,8 +203,34 @@ a {
 .translateToRight {
   transform: translate(100%, -100%); }
 
+.translateToTop {
+  transform: translate(0, -100%); }
+
 .overflowHidden {
   overflow: hidden; }
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 3.2rem;
+  height: 32px;
+  opacity: .8;
+  transition: opacity .5s;
+  cursor: pointer; }
+  .close:hover {
+    opacity: 1; }
+  .close:before, .close:after {
+    position: absolute;
+    left: 1.5rem;
+    content: ' ';
+    height: 2rem;
+    width: 1px;
+    background-color: #242424; }
+  .close:before {
+    transform: rotate(45deg); }
+  .close:after {
+    transform: rotate(-45deg); }
 
 .btn {
   color: #fff;
@@ -226,6 +255,58 @@ a {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.overlayContact {
+  background-color: rgba(36, 36, 36, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all .5s;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  color: #242424;
+  display: flex;
+  transition: .2s opacity ease-out; }
+  .overlayContact.d-none {
+    transform: translate(-100%, -100%); }
+  .overlayContact__cont {
+    background-color: rgba(255, 181, 71, 0.95);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 3rem 5rem;
+    max-width: 50rem;
+    max-height: 30rem; }
+    @media (min-width: 43.75em) {
+      .overlayContact__cont {
+        width: 50rem;
+        max-height: 40rem; } }
+  .overlayContact__headlineTelephoneCont {
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .overlayContact__headline, .overlayContact__telephone {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem; }
+  .overlayContact__headline {
+    font-size: 2rem; }
+    @media (min-width: 43.75em) {
+      .overlayContact__headline {
+        font-size: 3rem; } }
+  .overlayContact__telephone {
+    font-size: 1.5rem;
+    display: flex; }
 
 .header {
   background: linear-gradient(rgba(36, 36, 36, 0.6) 50%, rgba(36, 36, 36, 0.6) 100%), url("../images/compressed/resized/1200height_bar-beverage-cocktail-109275-min.jpg");

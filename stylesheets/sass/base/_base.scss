@@ -7,6 +7,7 @@
 .telCont {
     display: flex;
     justify-content: center;
+
     &_icon {
         margin-right: 5px;
         height: 1.5rem;
@@ -18,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     &-icon {
         width: 2.5rem;
         margin-left: 1rem;
@@ -29,13 +31,18 @@
     display: none;
 }
 
+.opacity-none {
+    opacity: 0;
+}
+
 .stickyHeader {
     position: fixed;
     top: 0;
     left: 0;
     // transform: translateX(-50%);
     width: 100%;
-    max-width: initial;;
+    max-width: initial;
+    ;
     padding-top: 2.2rem;
     padding-bottom: 2.2rem;
     background-color: rgba(#000, .9);
@@ -58,6 +65,43 @@
     transform: translate(100%, -100%);
 }
 
+.translateToTop {
+    transform: translate(0, -100%);
+}
+
 .overflowHidden {
     overflow: hidden;
 }
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 3.2rem;
+    height: 32px;
+    opacity: .8;
+    transition: opacity .5s;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        left: 1.5rem;
+        content: ' ';
+        height: 2rem;
+        width: 1px;
+        background-color: $colorDark;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+

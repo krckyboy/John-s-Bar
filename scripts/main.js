@@ -142,7 +142,6 @@ ut.ready(() => {
             });
         })();
 
-
         hamEl.addEventListener("click", e => {
             hamToggleStates();
         })
@@ -167,9 +166,39 @@ ut.ready(() => {
 
     const galleryMobile = (() => {
 
+    })();
 
+    const modalContact = (() => {
+        const modal = document.getElementById("overlayContact");
+        const btns = document.getElementsByClassName("btn");
+        const close = document.getElementById("overlayContact__close");
 
-    })()
+        const showModal = (e) => {
+            e.preventDefault();
+            modal.classList.remove("d-none");
+            modal.classList.remove("opacity-none");
+        }
+
+        const hideModal = (e) => {
+            modal.classList.add("opacity-none");
+            setTimeout(() => {
+                modal.classList.add("d-none");
+            }, 500);
+        }
+
+        btns[0].addEventListener("click", showModal);
+        btns[1].addEventListener("click", showModal);
+        close.addEventListener("click", e => {
+            e.preventDefault();
+            hideModal();
+        });
+        modal.addEventListener("click", e => {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+
+    })();
     window.addEventListener("resize", e => {
         stickyHeader();
         let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
