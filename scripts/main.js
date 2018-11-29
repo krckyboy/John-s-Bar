@@ -174,7 +174,6 @@ ut.ready(() => {
         const close = document.getElementById("overlayContact__close");
 
         const showModal = (e) => {
-            e.preventDefault();
             modal.classList.remove("d-none");
             modal.classList.remove("opacity-none");
         }
@@ -186,19 +185,36 @@ ut.ready(() => {
             }, 500);
         }
 
-        btns[0].addEventListener("click", showModal);
-        btns[1].addEventListener("click", showModal);
+        btns[0].addEventListener("click", e => {
+            e.preventDefault()
+            showModal()
+            ut.bodyOverflowHiddenToggle();
+        });
+        btns[1].addEventListener("click", e => {
+            e.preventDefault()
+            showModal()
+            ut.bodyOverflowHiddenToggle();
+        });
         close.addEventListener("click", e => {
             e.preventDefault();
             hideModal();
+            ut.bodyOverflowHiddenOff();
         });
         modal.addEventListener("click", e => {
             if (e.target === modal) {
                 hideModal();
+                ut.bodyOverflowHiddenOff();
             }
         });
 
     })();
+
+    const disableScrollbar = (e) => {
+        if (document.body.classList.contains("overflowHidden")) {
+            e.preventDefault();
+        }
+    }
+
     window.addEventListener("resize", e => {
         stickyHeader();
         let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
@@ -213,4 +229,9 @@ ut.ready(() => {
         stickyHeader();
         hamburgerAndMobileMenu();
     })
+
+
+
+    document.body.addEventListener("touchmove", disableScrollbar);
+    document.body.addEventListener("wheel", disableScrollbar);
 })

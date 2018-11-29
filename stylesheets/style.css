@@ -158,6 +158,10 @@ a {
   padding-left: 2rem;
   padding-right: 2rem; }
 
+body.overflowHidden {
+  overflow-y: scroll;
+  width: 100%; }
+
 .telCont {
   display: flex;
   justify-content: center; }

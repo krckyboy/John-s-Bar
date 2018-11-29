@@ -4,6 +4,13 @@
     padding-right: 2rem;
 }
 
+body {
+    &.overflowHidden {
+        overflow-y: scroll;
+        width: 100%;
+    }
+}
+
 .telCont {
     display: flex;
     justify-content: center;
@@ -96,12 +103,12 @@
         width: 1px;
         background-color: $colorDark;
     }
+
     &:before {
         transform: rotate(45deg);
     }
-    
+
     &:after {
         transform: rotate(-45deg);
     }
 }
-
