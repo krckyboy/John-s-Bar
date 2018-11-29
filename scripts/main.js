@@ -230,8 +230,6 @@ ut.ready(() => {
         hamburgerAndMobileMenu();
     })
 
-
-
     document.body.addEventListener("touchmove", disableScrollbar);
     document.body.addEventListener("wheel", disableScrollbar);
 })
