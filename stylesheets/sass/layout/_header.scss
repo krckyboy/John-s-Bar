@@ -3,10 +3,16 @@
     background: linear-gradient(rgba($colorDark, 0.6) 50%, rgba($colorDark, 0.6) 100%),
         url("../images/compressed/resized/1200height_bar-beverage-cocktail-109275-min.jpg");
 
+
     background-size: cover;
     background-position: center center;
     padding: .5rem 1.5rem 1rem 1.5rem;
     height: 100vh;
+    
+    * {
+        animation-name: fadeIn;
+        animation-duration: 1.5s;
+    }
 
     &_container {
 
@@ -69,6 +75,7 @@
         align-content: center;
         justify-items: center;
         justify-self: center;
+
         &.stickyHeader {
             transition: background-color 1s;
         }
@@ -232,7 +239,5 @@
         flex-direction: column;
     }
 
-    &__item {
-
-    }
+    &__item {}
 }

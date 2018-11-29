@@ -221,12 +221,21 @@ a {
     .btn-primary--noFill:hover, .btn-primary--noFill:focus {
       color: #FFB547; }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .header {
   background: linear-gradient(rgba(36, 36, 36, 0.6) 50%, rgba(36, 36, 36, 0.6) 100%), url("../images/compressed/resized/1200height_bar-beverage-cocktail-109275-min.jpg");
   background-size: cover;
   background-position: center center;
   padding: .5rem 1.5rem 1rem 1.5rem;
   height: 100vh; }
+  .header * {
+    animation-name: fadeIn;
+    animation-duration: 1.5s; }
   .header_container {
     display: grid;
     height: 100%;
