@@ -168,13 +168,6 @@
             background-position: center center;
             background-attachment: fixed;
             background-size: auto;
-            // backface-visibility: hidden;
-            // -webkit-backface-visibility: hidden;
-            // -webkit-transform: translateZ(0) scale(1.0, 1.0);
-            // -webkit-transform: translate3d(0,0,0);
-            // position: static;
-            // will-change:top;
-
         }
 
         &--2 {
@@ -208,12 +201,12 @@
     }
 
     &__discount {
-        padding-bottom: 4rem;
         text-align: center;
         max-width: 50rem;
-        padding-left: 6rem;
-
+        padding-bottom: 4rem;
+        
         @include mqMin(60em) {
+            padding-left: 6rem;
             text-align: initial;
             width: 40%;
         }

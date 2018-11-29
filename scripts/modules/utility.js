@@ -48,7 +48,7 @@ const ut = {
     setPropTrueAndRestFalse: (object, propName) => {
         for (let property in object) {
             if (object.hasOwnProperty(property)) {
-                if(property === propName) {
+                if (property === propName) {
                     object[property] = true;
                 } else {
                     object[property] = false;
@@ -59,7 +59,10 @@ const ut = {
     onClick: (navEl, sectEl) => {
         navEl.addEventListener("click", e => {
             e.preventDefault();
-            sectEl.scrollIntoView({
+            const nav = document.getElementById("nav")
+            const topOfElement = sectEl.offsetTop - nav.clientHeight - 15;
+            window.scroll({
+                top: topOfElement,
                 behavior: "smooth",
                 block: "start"
             });
@@ -69,10 +72,17 @@ const ut = {
         navEl.addEventListener("click", e => {
             e.preventDefault();
             callback();
-            sectEl.scrollIntoView({
+            const nav = document.getElementById("nav")
+            const topOfElement = sectEl.offsetTop - nav.clientHeight;
+            window.scroll({
+                top: topOfElement,
                 behavior: "smooth",
                 block: "start"
             });
+            // sectEl.scrollIntoView({
+            //     behavior: "smooth",
+            //     block: "start"
+            // });
         })
     },
     bodyOverflowHiddenOn: () => {

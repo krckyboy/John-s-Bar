@@ -22,12 +22,7 @@ ut.ready(() => {
     const stickyHeader = (() => {
 
         const nav = document.getElementById("nav");
-        let navOffset = nav.offsetTop;
-        const sectionOffsets = {
-            about: sections.about.offsetTop,
-            menu: sections.menu.offsetTop,
-            gallery: sections.gallery.offsetTop,
-        }
+        const header = document.getElementById("header");
         const navItems = {
             home: document.getElementById("nav_home"),
             about: document.getElementById("nav_about"),
@@ -35,15 +30,15 @@ ut.ready(() => {
             gallery: document.getElementById("nav_gallery")
         }
         const activeColor = () => {
-            if (pageYOffset >= sectionOffsets.about && pageYOffset < sectionOffsets.menu) {
+            if (pageYOffset >= sections.about.offsetTop && pageYOffset < sections.menu.offsetTop) {
                 navItems.about.classList.add("activeColor")
                 navItems.menu.classList.remove("activeColor")
                 navItems.gallery.classList.remove("activeColor")
-            } else if (pageYOffset >= sectionOffsets.menu && pageYOffset < sectionOffsets.gallery) {
+            } else if (pageYOffset >= sections.menu.offsetTop && pageYOffset < sections.gallery.offsetTop) {
                 navItems.menu.classList.add("activeColor")
                 navItems.about.classList.remove("activeColor")
                 navItems.gallery.classList.remove("activeColor")
-            } else if (pageYOffset >= sectionOffsets.gallery) {
+            } else if (pageYOffset >= sections.gallery.offsetTop) {
                 navItems.gallery.classList.add("activeColor")
                 navItems.about.classList.remove("activeColor")
                 navItems.menu.classList.remove("activeColor")
@@ -55,23 +50,24 @@ ut.ready(() => {
         }
 
         const stickyHeaderAppear = () => {
-            if (window.pageYOffset > navOffset) {
+            if (window.pageYOffset > header.clientHeight) {
                 nav.classList.add("stickyHeader");
             } else {
                 nav.classList.remove("stickyHeader");
             }
         }
 
-        const scrollOnClick = (() => {
+        const scrollOnClick = () => {
             ut.onClick(navItems.home, sections.home);
             ut.onClick(navItems.about, sections.about);
             ut.onClick(navItems.menu, sections.menu);
             ut.onClick(navItems.gallery, sections.gallery);
-        })();
+        }
 
         const fnc = () => {
             stickyHeaderAppear();
             activeColor();
+            scrollOnClick();
         }
         return fnc;
     })();
@@ -170,13 +166,17 @@ ut.ready(() => {
     })();
 
     const galleryMobile = (() => {
-        window.addEventListener("resize", e => {
-            let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
-            if (viewport < 43.75) {
-                console.log("it's mobile");
-            }
-        })
+
+
+
     })()
+    window.addEventListener("resize", e => {
+        stickyHeader();
+        let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
+        if (viewport < 43.75) {
+
+        }
+    })
 
     window.addEventListener("scroll", e => {
         e.preventDefault();
