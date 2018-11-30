@@ -204,7 +204,7 @@
         text-align: center;
         max-width: 50rem;
         padding-bottom: 4rem;
-        
+
         @include mqMin(60em) {
             padding-left: 6rem;
             text-align: initial;
@@ -276,6 +276,7 @@
             height: 100%;
             width: 100%;
             object-position: center center;
+            transition: transform .4s ease-out;
 
             @include mqMin(43.75em) {
                 padding: 0;

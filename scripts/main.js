@@ -164,10 +164,6 @@ ut.ready(() => {
         document.getElementById("drinkDay").textContent = drink;
     })();
 
-    const galleryMobile = (() => {
-
-    })();
-
     const modalContact = (() => {
         const modal = document.getElementById("overlayContact");
         const btns = document.getElementsByClassName("btn");
@@ -215,11 +211,165 @@ ut.ready(() => {
         }
     }
 
+    const galleryMobile = (() => {
+        const cont = document.getElementById("gallery");
+        const imgs = document.getElementsByClassName("gallery__img");
+        let currentImgIndex, start, percentage, width, xPercent;
+
+        const control = {
+            init: () => {
+                currentImgIndex = 0;
+                start = null;
+                percentage = 0;
+            },
+            nextImage: () => {
+                for (let img of imgs) {
+                    // Translate all images 
+                    img.style.transform = `translateX(-${percentage}%)`; // this works
+                }
+                currentImgIndex++;
+            },
+            previousImage: () => {
+                for (let img of imgs) {
+                    img.style.transform = `translateX(-${percentage}%)`;
+                }
+                currentImgIndex--;
+            },
+            repositionImages: () => {
+                for (let img of imgs) {
+                    img.style.transform = `translateX(-${percentage}%)`;
+                }
+            },
+            transitionOffActive: () => {
+                for (let img of imgs) {
+                    img.classList.add("transitionOff");
+                }
+            },
+            transitionOffDisable: () => {
+                for (let img of imgs) {
+                    img.classList.remove("transitionOff");
+                }
+            },
+            translateImagesForXPercent: () => {
+                control.transitionOffActive();
+                for (let img of imgs) {
+                    img.style.transform = `translateX(-${percentage - xPercent}%)`;
+                }
+            },
+            disable: () => {
+                for (let img of imgs) {
+                    img.style.transform = "translateX(0)";
+                }
+            }
+        }
+
+        control.init();
+
+        cont.addEventListener("touchstart", e => {
+            let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
+            if (viewport < 43.75) {
+                if (e.touches.length === 1) {
+                    // Just one finger touched the screen
+                    start = e.touches.item(0).clientX;
+                } else {
+                    // A second finger hit the screen, abort the touch
+                    start = null;
+                }
+            } else {
+                return;
+            }
+        });
+
+        cont.addEventListener("touchmove", e => {
+            let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
+            if (viewport < 43.75) {
+                control.transitionOffActive();
+                const touch = e.touches[0];
+                let x = touch.clientX - start;
+                width = imgs[0].clientWidth;
+
+                // Percentage of the image width that the 
+                // user has dragged  to the side
+                xPercent = (x / width) * 100;
+
+                // If user drags to the right and it's the last image
+                if (currentImgIndex === imgs.length - 1 && xPercent < 0) {
+                    xPercent = 0;
+                    return;
+                }
+
+                // If user drags to the left and it's the first image
+                if (currentImgIndex === 0 && xPercent > 0) {
+                    xPercent = 0;
+                    return;
+                }
+
+                for (let img of imgs) {
+                    img.style.transform = `translateX(-${percentage - xPercent}%)`;
+                }
+            }
+        });
+
+        window.addEventListener("touchend", e => {
+            let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
+            if (viewport < 43.75) {
+                // At least 100px are a swipe
+                let offset = 100;
+                if (start) {
+
+                    // The only finger that hit the screen left it
+                    let end = e.changedTouches.item(0).clientX;
+
+                    // If you're swiping right
+                    if (end > start + offset) {
+                        // If it's the first image
+                        if (currentImgIndex === 0) {
+                            return;
+                        }
+                        // Percentage based on current
+                        percentage = currentImgIndex * 100 - 100;
+                        control.translateImagesForXPercent();
+                        control.transitionOffDisable();
+                        control.previousImage();
+                    } else {
+                        control.transitionOffDisable();
+                        control.repositionImages();
+                    }
+                    // If you're swiping left
+                    if (end < start - offset) {
+                        // if it's the last image
+                        if (currentImgIndex === imgs.length - 1) {
+                            return;
+                        }
+                        control.translateImagesForXPercent();
+                        percentage = currentImgIndex * 100 + 100;
+                        control.transitionOffDisable();
+                        control.nextImage();
+                    } else {
+                        control.transitionOffDisable();
+                        control.repositionImages();
+                    }
+
+                }
+
+            }
+
+        });
+        
+        const func = () => {
+            control.disable();
+            control.init();
+        };
+
+        return func;
+
+    })();
+
     window.addEventListener("resize", e => {
         stickyHeader();
         let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
-        if (viewport < 43.75) {
-
+        if (!viewport < 43.75) {
+            galleryMobile();
         }
     })
 

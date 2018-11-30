@@ -237,6 +237,9 @@ body.overflowHidden {
   .close:after {
     transform: rotate(-45deg); }
 
+.transitionOff {
+  transition: none !important; }
+
 .btn {
   color: #fff;
   background-color: #FFB547;
@@ -652,7 +655,8 @@ body.overflowHidden {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    object-position: center center; }
+    object-position: center center;
+    transition: transform .4s ease-out; }
     @media (min-width: 43.75em) {
       .gallery__contImg img {
         padding: 0;

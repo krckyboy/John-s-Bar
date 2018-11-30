@@ -113,3 +113,8 @@ body {
         transform: rotate(-45deg);
     }
 }
+
+
+.transitionOff {
+    transition: none !important;
+}
