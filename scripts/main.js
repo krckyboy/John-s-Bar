@@ -212,7 +212,7 @@ ut.ready(() => {
     }
 
     const galleryMobile = (() => {
-        const cont = document.getElementById("gallery");
+        const cont = document.getElementById("gallery_cont");
         const imgs = document.getElementsByClassName("gallery__img");
         let currentImgIndex, start, percentage, width, xPercent;
 
