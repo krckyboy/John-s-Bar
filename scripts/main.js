@@ -368,7 +368,7 @@ ut.ready(() => {
     window.addEventListener("resize", e => {
         stickyHeader();
         let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
-        if (!viewport < 43.75) {
+        if (viewport > 43.75) {
             galleryMobile();
         }
     })
