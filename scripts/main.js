@@ -314,7 +314,7 @@ ut.ready(() => {
             let viewport = window.innerWidth / parseFloat(getComputedStyle(document.querySelector('html'))['font-size']) * .625;
             if (viewport < 43.75) {
                 // At least 100px are a swipe
-                let offset = 100;
+                let offset = 50;
                 if (start) {
 
                     // The only finger that hit the screen left it
