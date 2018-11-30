@@ -335,6 +335,7 @@ ut.ready(() => {
                         control.transitionOffDisable();
                         control.repositionImages();
                     }
+                    
                     // If you're swiping left
                     if (end < start - offset) {
                         // if it's the last image

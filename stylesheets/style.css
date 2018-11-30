@@ -635,9 +635,12 @@ body.overflowHidden {
   display: flex;
   position: relative;
   max-width: 120rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  touch-action: none;
+  max-height: 50vh; }
   @media (min-width: 43.75em) {
     .gallery__contImg {
+      max-height: initial;
       height: initial;
       display: grid;
       grid-gap: 5px;

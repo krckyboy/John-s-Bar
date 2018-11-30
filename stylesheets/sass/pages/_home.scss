@@ -249,8 +249,11 @@
         position: relative;
         max-width: 120rem;
         margin: 0 auto;
-
+        touch-action: none;
+        max-height: 50vh;
+        
         @include mqMin(43.75em) {
+            max-height: initial;
             height: initial;
             display: grid;
             grid-gap: 5px;
