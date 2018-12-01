@@ -316,10 +316,8 @@ ut.ready(() => {
                 // At least 100px are a swipe
                 let offset = 50;
                 if (start) {
-
                     // The only finger that hit the screen left it
                     let end = e.changedTouches.item(0).clientX;
-
                     // If you're swiping right
                     if (end > start + offset) {
                         // If it's the first image
@@ -349,20 +347,14 @@ ut.ready(() => {
                         control.transitionOffDisable();
                         control.repositionImages();
                     }
-
                 }
-
             }
-
         });
-        
         const func = () => {
             control.disable();
             control.init();
         };
-
         return func;
-
     })();
 
     window.addEventListener("resize", e => {

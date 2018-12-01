@@ -54,12 +54,12 @@
                 ". . . . . . . "
                 ". . . . . . . "
                 ". . . . . . . "
-                ". . . . . . . "
+                "sm . . . . . . "
                 "sm . . . . . . "
                 "sm . h h h . . "
                 "sm . h h h . . "
                 "sm . . . . . . "
-                ". . . . . . . "
+                "sm . . . . . . "
                 ". . . . . . . "
                 ". . . . . . . "
                 ". . . . . . . "
@@ -126,15 +126,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-
-        @include mqMin(20.5em) {
-            margin-top: -2rem;
-        }
-
-        @include mqMin(43.75em) {
-            margin-top: initial;
-        }
-
     }
 
 

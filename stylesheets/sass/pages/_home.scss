@@ -247,7 +247,7 @@
         overflow: hidden;
         display: flex;
         position: relative;
-        max-width: 120rem;
+        max-width: 150rem;
         margin: 0 auto;
 
         @include mqMin(43.75em) {
@@ -257,11 +257,17 @@
             grid-template-columns: repeat(6, minmax(5rem, 1fr));
             grid-auto-rows: 10rem;
             grid-auto-flow: dense;
+            grid-template-areas: 
+            "one one two two four four"
+            "one one two two four four"
+            "one one three three five five"
+            "six six three three five five"
+            "six six seven seven five five"
+            "six six seven seven eight eight"
+            "nine nine nine nine eight eight"
+            "nine nine nine nine eight eight";
             padding: 0 10rem;
-        }
-
-        @include mqMin(60em) {
-            // grid-auto-rows: 15rem;
+            
         }
 
         @include mqMin(70em) {
@@ -282,47 +288,16 @@
                 padding: 0;
                 width: 100%;
 
-                &:nth-child(-n + 3),
-                &:nth-child(6),
-                &:nth-child(7),
-                &:nth-child(10),
-                &:nth-child(11),
-                &:nth-child(12),
-                &:nth-child(15),
-                &:nth-child(16) {
-                    grid-row: span 2;
-                }
+                &:nth-child(1) {grid-area: one;}
+                &:nth-child(2) {grid-area: two;}
+                &:nth-child(3) {grid-area: three;}
+                &:nth-child(4) {grid-area: four;}
+                &:nth-child(5) {grid-area: five;}
+                &:nth-child(6) {grid-area: six;}
+                &:nth-child(7) {grid-area: seven;}
+                &:nth-child(8) {grid-area: eight;}
+                &:nth-child(9) {grid-area: nine;}
 
-                &:nth-child(10) {
-                    grid-column: span 1;
-                }
-
-                &:nth-child(3),
-                &:nth-child(4),
-                &:nth-child(7),
-                &:nth-child(9),
-                &:nth-child(11),
-                &:nth-child(14),
-                &:nth-child(15),
-                &:nth-child(17) {
-                    grid-column: span 2;
-                }
-
-                &:nth-child(2),
-                &:nth-child(12) {
-                    grid-column: span 3;
-                }
-
-
-
-                &:nth-child(5),
-                &:nth-child(6),
-                &:nth-child(8),
-                &:nth-child(13),
-                &:nth-child(16),
-                &:nth-child(18) {
-                    grid-column: span 4;
-                }
             }
         }
     }
