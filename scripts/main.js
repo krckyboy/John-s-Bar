@@ -154,14 +154,19 @@ ut.ready(() => {
     })();
 
     const discountDay = (() => {
+        debugger;
         const d = new Date;
         const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const drinks = ["Beers", "Cocktails", "Juices", "Tequilas", "Whiskeys", "Wine"];
-        const dayAndDrinkPosition = d.getDay();
+        const dayAndDrinkPosition = d.getDay() -1;
         const day = days[dayAndDrinkPosition];
         const drink = drinks[dayAndDrinkPosition];
-        document.getElementById("day").textContent = day;
-        document.getElementById("drinkDay").textContent = drink;
+        if(dayAndDrinkPosition === 6) {
+            document.querySelector(".menu__discount p").textContent = "Today is Sunday, so we're closed, but make sure to visit us as we give daily discounts! If you're a beer person, come here on Monday, we've got good news for you!"
+        } else {
+            document.getElementById("day").textContent = day;
+            document.getElementById("drinkDay").textContent = drink;
+        }
     })();
 
     const modalContact = (() => {
