@@ -10,6 +10,15 @@
         flex-direction: column;
         margin: 0 auto;
 
+        @include mqMin(43.75em) {
+            flex-direction: row;
+
+            .socialMediaCont {
+                order: -1;
+            }
+
+        }
+
         & > * {
             margin: 1rem;
         }
