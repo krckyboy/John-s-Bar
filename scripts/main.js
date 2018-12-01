@@ -154,7 +154,6 @@ ut.ready(() => {
     })();
 
     const discountDay = (() => {
-        debugger;
         const d = new Date;
         const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const drinks = ["Beers", "Cocktails", "Juices", "Tequilas", "Whiskeys", "Wine"];
