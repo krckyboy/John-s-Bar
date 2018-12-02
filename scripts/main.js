@@ -160,7 +160,7 @@ ut.ready(() => {
         const dayAndDrinkPosition = d.getDay() -1;
         const day = days[dayAndDrinkPosition];
         const drink = drinks[dayAndDrinkPosition];
-        if(dayAndDrinkPosition === 6) {
+        if(d.getDay() === 0) {
             document.querySelector(".menu__discount p").textContent = "Today is Sunday, so we're closed, but make sure to visit us as we give daily discounts! If you're a beer person, come here on Monday, we've got good news for you!"
         } else {
             document.getElementById("day").textContent = day;
